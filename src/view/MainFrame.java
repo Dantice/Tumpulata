@@ -1263,13 +1263,11 @@ public class MainFrame extends javax.swing.JFrame {
         new EstrattoDiag(this, true, ""+numero).setVisible(true);
         map.get("l"+(numero)).setForeground(new Color(0, 190, 0));
         ((DefaultListModel<String>)jList1.getModel()).addElement("Estratto: " + numero);
-        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        switch(JOptionPane.showConfirmDialog(
-                null, "Confermi la chiusura? La partita andrà persa.", "Conferma chiusura", JOptionPane.YES_NO_OPTION)) {
+        switch(JOptionPane.showConfirmDialog(this, "Confermi la chiusura? La partita andrà persa.", "Conferma chiusura", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)) {
             case JOptionPane.YES_OPTION:
                 System.exit(0);
             case JOptionPane.NO_OPTION:

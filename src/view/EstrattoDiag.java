@@ -14,10 +14,8 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.Action;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.Timer;
 
 /**
  *
@@ -86,7 +84,7 @@ public class EstrattoDiag extends javax.swing.JDialog {
     private Image getScaledIcon(Image i, int x, int y) {
         BufferedImage bi = new BufferedImage(x, y, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = bi.createGraphics();
-        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
         g2.drawImage(i, 0, 0, x, y, null);
         g2.dispose();
         return bi;
